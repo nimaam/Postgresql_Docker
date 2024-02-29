@@ -1,16 +1,16 @@
 version: '3.9'
 
 networks:
-    TR_NAM_Docker:
-      name: TR_NAM_Docker
+    Docker_Net:
+      name: Docker_Net
       external: true
       driver: macvlan
       driver_opts:
-        parent: "enp2s0"
+        parent: "Interface"
       ipam:
         config:
-           - subnet: 192.168.120.0/24
-             gateway: 192.168.120.1
+           - subnet: Docker_Subnet
+             gateway: Docker_Gateway
 
 services:
 
@@ -29,7 +29,7 @@ services:
       - "5432:5432"
     networks:
       TR_NAM_Docker:
-        ipv4_address: 192.168.120.20
+        ipv4_address: Postgresql_IP
 
   pgadmin:
     container_name: pgadmin
@@ -52,4 +52,4 @@ services:
       - "80:80"
     networks:
       TR_NAM_Docker:
-        ipv4_address: 192.168.120.21
+        ipv4_address: PGADMIN_IP
