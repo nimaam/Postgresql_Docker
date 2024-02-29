@@ -36,8 +36,8 @@ services:
     hostname: pgadmin
     image: dpage/pgadmin4:latest
     environment:
-      PGADMIN_DEFAULT_EMAIL: 'nima.alizadeh.m@gmail.com'
-      PGADMIN_DEFAULT_PASSWORD: 'Missani.3018'
+      PGADMIN_DEFAULT_EMAIL: 'USERNAME_EMAIL'
+      PGADMIN_DEFAULT_PASSWORD: 'PASSWORD'
       PGADMIN_CONFIG_SERVER_MODE: 'False'
       WEBSERVER_AUTO_CREATE_USER: 'true'
       WEBSERVER_REMOTE_USER: 'REMOTE_USER'
